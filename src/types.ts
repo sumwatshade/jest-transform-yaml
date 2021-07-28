@@ -1,31 +1,13 @@
-import { Config } from "@jest/types";
-import { RawSourceMap } from "source-map";
+/* eslint-disable no-unused-vars */
+import { Config } from '@jest/types';
+import { RawSourceMap } from 'source-map';
 
 export { Config };
-export { Path } from "@jest/types/build/Config";
+export { Path } from '@jest/types/build/Config';
 
-export interface Transformer<OptionType = unknown> {
-  /**
-   * Indicates if the transformer is capabale of instrumenting the code for code coverage.
-   *
-   * If V8 coverage is _not_ active, and this is `true`, Jest will assume the code is instrumented.
-   * If V8 coverage is _not_ active, and this is `false`. Jest will instrument the code returned by this transformer using Babel.
-   */
-  canInstrument?: boolean;
-  createTransformer?: (options?: OptionType) => Transformer;
-
-  getCacheKey?: (
-    sourceText: string,
-    sourcePath: string,
-    options: TransformOptions<OptionType>
-  ) => string;
-
-  process: (
-    sourceText: string,
-    sourcePath: string,
-    options: TransformOptions<OptionType>
-  ) => TransformedSource;
-}
+type TransformedSource =
+  | { code: string; map?: RawSourceMap | string | null }
+  | string;
 
 export interface TransformOptions<OptionType> {
   /**
@@ -46,10 +28,26 @@ export interface TransformOptions<OptionType> {
   /** the options passed through Jest's config by the user */
   transformerConfig: OptionType;
 }
+export interface Transformer<OptionType = unknown> {
+  /**
+   * Indicates if the transformer is capabale of instrumenting the code for code coverage.
+   *
+   * If V8 coverage is _not_ active, and this is `true`, Jest will assume the code is instrumented.
+   * If V8 coverage is _not_ active, and this is `false`. Jest will instrument the code returned by
+   * this transformer using Babel.
+   */
+  canInstrument?: boolean;
+  createTransformer?: (options?: OptionType) => Transformer;
 
-type TransformedSource =
-  | { code: string; map?: RawSourceMap | string | null }
-  | string;
+  getCacheKey?: (
+    sourceText: string,
+    sourcePath: string,
+    options: TransformOptions<OptionType>
+  ) => string;
 
-// Config.ProjectConfig can be seen in in code [here](https://github.com/facebook/jest/blob/v26.6.3/packages/jest-types/src/Config.ts#L323)
-// RawSourceMap comes from [`source-map`](https://github.com/mozilla/source-map/blob/0.6.1/source-map.d.ts#L6-L12)
+  process: (
+    sourceText: string,
+    sourcePath: string,
+    options: TransformOptions<OptionType>
+  ) => TransformedSource;
+}

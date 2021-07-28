@@ -1,27 +1,26 @@
-import jsYaml from "js-yaml";
-import { Transformer, TransformOptions } from "./types";
-
-import crypto from "crypto";
+import jsYaml from 'js-yaml';
+import crypto from 'crypto';
+import { Transformer, TransformOptions } from './types';
 
 const getCacheKey = (
   fileData: string,
   filePath: string,
-  options: TransformOptions<unknown>
+  options: TransformOptions<unknown>,
 ): string => {
-  const optionsString =
-    typeof options === "string" ? options : JSON.stringify(options);
+  const optionsString = typeof options === 'string' ? options : JSON.stringify(options);
 
   return crypto
-    .createHash("md5")
+    .createHash('md5')
     .update(fileData)
     .update(optionsString)
-    .digest("hex");
+    .digest('hex');
 };
 
 const process = (sourceText: string): string => {
-  const result: string | number | undefined | object | null =
-    jsYaml.load(sourceText);
-  const json = JSON.stringify(result, null, "\t");
+  const result:
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    string | number | undefined | object | null = jsYaml.load(sourceText);
+  const json = JSON.stringify(result, null, '\t');
   return `module.exports = ${json}`;
 };
 
@@ -32,4 +31,4 @@ const transformer: Transformer = {
 
 export default transformer;
 
-export * from "./types";
+export * from './types';
