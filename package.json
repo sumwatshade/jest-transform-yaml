@@ -29,6 +29,12 @@
   "scripts": {
     "build": "tsc --outDir lib",
     "lint": "prettier --write src/**/*.ts",
-    "test": "echo 'no tests yet!'"
+    "test": "echo 'no tests yet!'",
+    "release": "auto shipit"
+  },
+  "auto": {
+    "plugins": [
+      "npm"
+    ]
   }
 }
