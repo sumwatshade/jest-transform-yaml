@@ -4,6 +4,13 @@
   "description": "Transforms for YAML within Jest",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "keywords": [
+    "jest",
+    "transformer",
+    "jest-transform",
+    "yaml",
+    "testing"
+  ],
   "repository": "git@github.com:sumwatshade/jest-transform-yaml.git",
   "author": "lshadler <lshadler13@gmail.com>",
   "license": "MIT",
@@ -16,7 +23,12 @@
     "@jest/types": "27.0.6",
     "@tsconfig/recommended": "^1.0.1",
     "@types/js-yaml": "^4.0.2",
+    "@typescript-eslint/eslint-plugin": "4.28.5",
+    "@typescript-eslint/parser": "4.28.5",
     "auto": "10.30.0",
+    "eslint": "7.31.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-plugin-import": "2.23.4",
     "jest": "27.0.6",
     "prettier": "2.3.2",
     "source-map": "0.7.3",
@@ -28,7 +40,8 @@
   },
   "scripts": {
     "build": "tsc --outDir lib",
-    "lint": "prettier --write src/**/*.ts",
+    "format": "prettier src/**/*.ts",
+    "lint": "eslint --ext .ts src",
     "test": "echo 'no tests yet!'",
     "release": "auto shipit"
   },
