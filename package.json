@@ -1,6 +1,6 @@
 {
   "name": "jest-transform-yaml",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Transforms for YAML within Jest",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
