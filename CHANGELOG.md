@@ -1,3 +1,15 @@
+# v0.1.1 (Thu Jul 29 2021)
+
+#### ⚠️ Pushed to `main`
+
+- Create dependabot.yml ([@sumwatshade](https://github.com/sumwatshade))
+
+#### Authors: 1
+
+- Lucas Shadler ([@sumwatshade](https://github.com/sumwatshade))
+
+---
+
 # v0.1.0 (Wed Jul 28 2021)
 
 #### 🚀 Enhancement
