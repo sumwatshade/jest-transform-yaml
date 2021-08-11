@@ -42,12 +42,12 @@ export interface Transformer<OptionType = unknown> {
   getCacheKey?: (
     sourceText: string,
     sourcePath: string,
-    options: TransformOptions<OptionType>
+    options: TransformOptions<OptionType> | string
   ) => string;
 
   process: (
     sourceText: string,
     sourcePath: string,
-    options: TransformOptions<OptionType>
+    options: TransformOptions<OptionType> | string
   ) => TransformedSource;
 }
