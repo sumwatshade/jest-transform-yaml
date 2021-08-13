@@ -18,7 +18,7 @@
     "@auto-it/all-contributors": "10.30.0",
     "@auto-it/first-time-contributor": "10.30.0",
     "@auto-it/git-tag": "10.30.0",
-    "@auto-it/npm": "10.30.0",
+    "@auto-it/npm": "10.31.0",
     "@auto-it/released": "10.30.0",
     "@jest/types": "27.0.6",
     "@tsconfig/recommended": "^1.0.1",
