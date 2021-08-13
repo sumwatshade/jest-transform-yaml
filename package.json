@@ -15,7 +15,7 @@
   "author": "lshadler <lshadler13@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@auto-it/all-contributors": "10.30.0",
+    "@auto-it/all-contributors": "10.31.0",
     "@auto-it/first-time-contributor": "10.30.0",
     "@auto-it/git-tag": "10.30.0",
     "@auto-it/npm": "10.30.0",
