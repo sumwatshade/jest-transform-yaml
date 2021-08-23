@@ -5,7 +5,7 @@ import { Transformer, TransformOptions } from './types';
 const getCacheKey = (
   fileData: string,
   filePath: string,
-  options: TransformOptions<unknown>,
+  options: TransformOptions<unknown> | string,
 ): string => {
   const optionsString = typeof options === 'string' ? options : JSON.stringify(options);
 
