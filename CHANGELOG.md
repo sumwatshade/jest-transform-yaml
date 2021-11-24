@@ -1,3 +1,16 @@
+# v1.0.0 (Wed Nov 24 2021)
+
+#### 💥 Breaking Change
+
+- feat: drop support for Node 15 [#17](https://github.com/sumwatshade/jest-transform-yaml/pull/17) (lucas_shadler@intuit.com [@sumwatshade](https://github.com/sumwatshade))
+
+#### Authors: 2
+
+- lshadler (lucas_shadler@intuit.com)
+- Lucas Shadler ([@sumwatshade](https://github.com/sumwatshade))
+
+---
+
 # v0.1.3 (Wed Nov 24 2021)
 
 #### ⚠️ Pushed to `main`
