@@ -1,13 +1,13 @@
 # jest-transform-yaml
 
-> A Jest transformer that allows the import of YAML files
+> A [Jest](https://jestjs.io/) transformer that allows the import of YAML files
 
 ## Description
 
-When you store your data in YAML format for your application, you
+When you store your data in [YAML format](https://yaml.org/) for your application, you
 might want to import that data within your Jest tests. By default,
 Jest does not know how to import YAML files, so you will need to 
-provide a transformer
+provide a transformer that can properly load it.
 
 ## Installation
 
@@ -30,13 +30,22 @@ pnpm add jest-transform-yaml --save-dev --save-exact
 In your `jest.config.js` (or `jest.config.ts`) file, add
 the following:
 
-```js
-{
-    // ... config
+```javascript
+module.exports = {
+    // ...
     transform: {
-        // ... other transforms
+        // ... other transforms ...
         "\\.yaml$": "jest-transform-yaml",
     },
-    "moduleFileExtensions": [/* ... other file extensions ... */, "yaml"],
+    "moduleFileExtensions": [
+        // .. other file extensions ... 
+        "yaml"
+    ],
+    // ...
 }
 ```
+
+## Alternatives
+
+- [danwang/yaml-jest](https://github.com/danwang/yaml-jest)
+- [akameco/jest-yaml-transform](https://github.com/akameco/jest-yaml-transform)
