@@ -1,18 +1,19 @@
 import jsYaml from 'js-yaml';
-import md5hex from 'md5-hex';
+import crypto from 'crypto';
 import { Transformer, TransformOptions } from './types';
 
 const getCacheKey = (
   fileData: string,
   filePath: string,
-  options: TransformOptions<unknown> | string,
+  options: TransformOptions<unknown>,
 ): string => {
   const optionsString = typeof options === 'string' ? options : JSON.stringify(options);
 
-  return md5hex([
-    fileData,
-    optionsString,
-  ]);
+  return crypto
+    .createHash('md5')
+    .update(fileData)
+    .update(optionsString)
+    .digest('hex');
 };
 
 const process = (sourceText: string): string => {
