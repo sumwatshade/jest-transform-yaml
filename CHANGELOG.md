@@ -1,3 +1,15 @@
+# v0.1.3 (Wed Nov 24 2021)
+
+#### ⚠️ Pushed to `main`
+
+- feat!: remove crypto and drop node 15 (lucas_shadler@intuit.com)
+
+#### Authors: 1
+
+- lshadler (lucas_shadler@intuit.com)
+
+---
+
 # v0.1.2 (Mon Aug 23 2021)
 
 #### 🐛 Bug Fix
