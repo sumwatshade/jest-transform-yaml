@@ -45,6 +45,10 @@ module.exports = {
 }
 ```
 
+## Node support
+
+Currently, this is set up to be tested against all [Node LTS versions](https://nodejs.org/en/about/releases/) and the current. If you observe an issue within your project around Node version support, please feel free to raise a PR or add an issue :smile:
+
 ## Alternatives
 
 - [danwang/yaml-jest](https://github.com/danwang/yaml-jest)
