@@ -1,6 +1,6 @@
 import jsYaml from 'js-yaml';
 import crypto from 'crypto';
-import { Transformer, TransformOptions } from './types';
+import { Transformer, TransformOptions, TransformedSource } from './types';
 
 const getCacheKey = (
   fileData: string,
@@ -16,12 +16,14 @@ const getCacheKey = (
     .digest('hex');
 };
 
-const process = (sourceText: string): string => {
+const process = (sourceText: string): TransformedSource => {
   const result:
     // eslint-disable-next-line @typescript-eslint/ban-types
     string | number | undefined | object | null = jsYaml.load(sourceText);
   const json = JSON.stringify(result, null, '\t');
-  return `module.exports = ${json}`;
+  return {
+    code: `module.exports = ${json}`
+  };
 };
 
 const transformer: Transformer = {

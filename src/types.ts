@@ -5,9 +5,7 @@ import { RawSourceMap } from 'source-map';
 export { Config };
 export { Path } from '@jest/types/build/Config';
 
-type TransformedSource =
-  | { code: string; map?: RawSourceMap | string | null }
-  | string;
+export type TransformedSource = { code: string; map?: RawSourceMap | string | null };
 
 export interface TransformOptions<OptionType> {
   /**
