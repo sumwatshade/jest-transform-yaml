@@ -1,3 +1,15 @@
+# v1.0.1 (Fri Aug 25 2023)
+
+#### 🐛 Bug Fix
+
+- Update engine filed to include v18 [#18](https://github.com/sumwatshade/jest-transform-yaml/pull/18) ([@stefanbuck](https://github.com/stefanbuck))
+
+#### Authors: 1
+
+- Stefan Buck ([@stefanbuck](https://github.com/stefanbuck))
+
+---
+
 # v1.0.0 (Wed Nov 24 2021)
 
 #### 💥 Breaking Change
