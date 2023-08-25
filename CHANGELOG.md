@@ -1,3 +1,15 @@
+# v1.1.0 (Fri Aug 25 2023)
+
+#### 🚀 Enhancement
+
+- Cut minor release (fixing publish workflow) [#23](https://github.com/sumwatshade/jest-transform-yaml/pull/23) ([@sumwatshade](https://github.com/sumwatshade))
+
+#### Authors: 1
+
+- Lucas Shadler ([@sumwatshade](https://github.com/sumwatshade))
+
+---
+
 # v1.0.1 (Fri Aug 25 2023)
 
 #### 🐛 Bug Fix
