@@ -45,7 +45,7 @@
     "build": "tsc --outDir lib",
     "format": "prettier src/**/*.ts",
     "lint": "eslint --ext .ts src",
-    "test": "echo 'no tests yet!'",
+    "e2e": "./run-e2e-test.sh",
     "release": "auto shipit"
   },
   "auto": {

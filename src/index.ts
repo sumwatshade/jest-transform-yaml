@@ -22,7 +22,7 @@ const process = (sourceText: string): TransformedSource => {
     string | number | undefined | object | null = jsYaml.load(sourceText);
   const json = JSON.stringify(result, null, '\t');
   return {
-    code: `module.exports = ${json}`
+    code: `module.exports = ${json}`,
   };
 };
 
