@@ -6,7 +6,9 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-echo "Building jest-transform-yaml" yarn build
+echo "Building jest-transform-yaml" 
+
+yarn build
 
 echo "Running test for Jest version $1"
 
