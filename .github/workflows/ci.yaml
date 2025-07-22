@@ -112,3 +112,41 @@ jobs:
     - name: Confirm the loader functions for jest@${{ matrix.jest-version }}
       run: yarn e2e ${{ matrix.jest-version }}
 
+
+  verify-release:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [22.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Cache Node.js modules
+      uses: actions/cache@v4
+      with:
+        # npm cache files are stored in `~/.npm` on Linux/macOS
+        path: '**/node_modules'
+        key: ${{ runner.OS }}-node-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.OS }}-node-${{ matrix.node-version }}
+          ${{ runner.OS }}-node-
+          ${{ runner.OS }}-
+
+    - name: Install Dependencies
+      run: yarn install --frozen-lockfile
+      
+    - name: Confirm the loader functions for jest@${{ matrix.jest-version }}
+      run: |-
+        git fetch --tags
+        yarn auto shipit --dry-run
+
+      env: 
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
