@@ -1,3 +1,15 @@
+# v1.2.0 (Tue Jul 22 2025)
+
+#### 🚀 Enhancement
+
+- chore: fix build [#27](https://github.com/sumwatshade/jest-transform-yaml/pull/27) ([@ffluk3](https://github.com/ffluk3))
+
+#### Authors: 1
+
+- Lucas Shadler ([@ffluk3](https://github.com/ffluk3))
+
+---
+
 # v1.1.1 (Sat Aug 26 2023)
 
 
